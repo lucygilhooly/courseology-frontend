@@ -1,0 +1,23 @@
+@use '../../assets/sass/variables.scss' as *;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+.header{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color:$colour-one;
+  padding: 10px;
+  margin:20px;
+  font-family: 'Roboto';
+  border-radius: 15px;
+
+  &__title{
+    font-size: 30px;
+    padding-top: 10px;
+    border-radius: 15px;
+    color: $colour-four;
+    text-shadow: 3px 3px $colour-three ;
+  }
+
+}

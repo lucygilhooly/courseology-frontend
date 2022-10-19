@@ -1,0 +1,10 @@
+@use '../../assets/sass/variables.scss' as *;
+
+.navBar {
+    margin: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    background-color:$colour-one;
+    width: 100%;
+}
