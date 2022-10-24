@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.scss';
 import { useState } from "react";
-import Main from './components/Main/Main';
-import NavBar from './components/NavBar/NavBar';
-import Header from './components/Header/Header';
+import Main from './Containers/Main/Main';
+import NavBar from './Containers/NavBar/NavBar';
+import Header from './Containers/Header/Header';
 
 function App() {
 const [searchTerm, setSearchTerm] = useState(" ")

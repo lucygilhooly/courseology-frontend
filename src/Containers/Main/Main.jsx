@@ -1,33 +1,49 @@
 import React from 'react'
 import './Main.scss'
-import CardList from './CardList/CardList'
+import CardList from '../../Components/CardList/CardList'
+import DropDown from '../../Components/DropDown/DropDown'
 import { useState } from 'react'
 import { useEffect } from 'react'
 
 
 const Main = ({searchTerm}) => {
-  const [courses, setCourses] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [types, setTypes] = useState([]);
+  const [selectedType, setSelectedType] = useState("");
 
-  const getCourses = async() => {
-    const url = ""; // api here
-    const res = await fetch(url);
+
+  const getProducts = async() => {
+    const res = await fetch("http://localhost:8080/products");
     const data = await res.json();
-    setCourses(data)
+    setProducts(data)
     console.log(data)
   }
+  const getTypes = async () => {
+    const response = await fetch("http://localhost:8080/products/type");
+    const productData = await response.json();
+    setTypes(productData);
+  };
+
 
   useEffect(() => {
-   getCourses()
-  },[])
+   getProducts()
+   getTypes(selectedType)
+  },[selectedType])
 
-  const filterCourses = (coursesArr, searchTerm) => {
-    return coursesArr.filter((courses) => courses.name.toLowerCase().includes(searchTerm.toLowerCase()))
+  const handleSelectType = event => setSelectedType(event.target.value);
+
+  const filterProducts = (productsArr, searchTerm) => {
+    return productsArr.filter((products) => products.name.toLowerCase().includes(searchTerm.toLowerCase()))
   }
  
     return (
       <section className='main'>
-        <div className='main__courses'>
-          <CardList courses={filterCourses(courses, searchTerm)}/>
+        
+        <div className='main__products'>
+          <form className="main__products--form">
+         <DropDown options={types} onChange={handleSelectType} label="Types" labelText="Select a Product Type: " />
+         </form>
+          <CardList products={filterProducts(products, searchTerm)}/>
         </div>
      </section>
   )

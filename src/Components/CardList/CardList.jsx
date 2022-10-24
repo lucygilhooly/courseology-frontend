@@ -1,18 +1,19 @@
 import React from 'react'
 import './CardList.scss'
-import Card from './Card/Card'
+import Card from '../Card/Card'
+import skiPic from '../../assets/images/download.png'
 
-const CardList = ({courses}) => {
-  const coursesJSX = courses.map((courses, index) => {
+const CardList = ({products}) => {
+  const productsJSX = products.map((index) => {
     return (
       <div key={index}>
-      <Card name={course.name} image={course.image_url} />
+      <Card name={"Product Name"} image={skiPic} />
     </div>
   )
 })
 return (
-  <section className='courseGrid'>
-    {coursesJSX}
+  <section className='productGrid'>
+    {productsJSX}
   </section>
 )
 }

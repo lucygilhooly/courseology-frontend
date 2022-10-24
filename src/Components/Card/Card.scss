@@ -1,8 +1,8 @@
-@use '../../../../assets/sass/variables.scss' as *;
+@use '../../assets/scss/variables' as *;
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
 
-.course {
+.product {
     border: none;
     border-radius: 8px;
     display: flex;
@@ -39,6 +39,6 @@
    }
 }
 
-.course:hover{
+.product:hover{
     background-color: $colour-four;
 }
