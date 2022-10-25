@@ -7,7 +7,7 @@ const SearchBox = ({getSearchBoxValue}) => {
       <input
         type="text"
         onChange={getSearchBoxValue}
-        placeholder="   🔍"
+        placeholder="   🔍 Search "
         className="search-box__input"
       />
   )

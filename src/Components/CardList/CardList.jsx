@@ -1,10 +1,8 @@
 import React from 'react'
 import './CardList.scss'
 import Card from '../Card/Card'
-import skiPic from '../../assets/images/download.png'
 
 const CardList = ({products}) => {
-  console.log(products)
   const productsJSX = products.map((product,index) => {
     return (
       <div key={index}>

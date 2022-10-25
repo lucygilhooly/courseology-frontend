@@ -32,8 +32,8 @@ const Main = ({searchTerm}) => {
 
   const handleSelectType = event => setSelectedType(event.target.value);
 
-  const filterProducts = (productsArr, searchTerm) => {
-    return productsArr.filter((products) => products.name??products.name.toLowerCase().includes(searchTerm.toLowerCase()))
+  const filterProducts = (products, searchTerm) => {
+    return products.filter((product) => product.name??product.name.toLowerCase().includes(searchTerm.toLowerCase()))
   }
  
     return (
@@ -41,7 +41,7 @@ const Main = ({searchTerm}) => {
         
         <div className='main__products'>
           <form className="main__products--form">
-         <DropDown options={types} onChange={handleSelectType} label="Types" labelText="Select a Product Type: " />
+         <DropDown options={types} onChange={handleSelectType} label="Types" labelText="Select Product Type: " />
          </form>
           <CardList products={filterProducts(products, searchTerm)}/>
         </div>

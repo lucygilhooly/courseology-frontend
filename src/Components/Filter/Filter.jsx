@@ -7,10 +7,10 @@ const Filter = ({toggleFilter}) => {
   return (
     <div className="filter">    
       <div className="filter__categories">
-          <FilterItem toggleFilter={toggleFilter} filterTerm={"Beginner"}/>
-          <FilterItem toggleFilter={toggleFilter} filterTerm={"Intermediate"}/>
-          <FilterItem toggleFilter={toggleFilter} filterTerm={"Advanced"}/>
-          <FilterItem toggleFilter={toggleFilter} filterTerm={"Expert"}/>
+          <FilterItem toggleFilter={toggleFilter} filterBy={"Beginner"}/>
+          <FilterItem toggleFilter={toggleFilter} filterBy={"Intermediate"}/>
+          <FilterItem toggleFilter={toggleFilter} filterBy={"Advanced"}/>
+          <FilterItem toggleFilter={toggleFilter} filterBy={"Expert"}/>
       </div>
     </div>
   )

@@ -11,10 +11,9 @@ const NavBar = ({getSearchBoxValue}) => {
   
   return (
     <div className='navBar'>
-      <h3>Search here:</h3>
       <SearchBox getSearchBoxValue={getSearchBoxValue} />
       <div>
-        <h2 onClick={toggleFilter}>Sort By Skill Level:</h2>
+        <h3 onClick={toggleFilter}>Filter By Skill</h3>
         {filter && <Filter toggleFilter={toggleFilter}/>}
         </div>
     </div>

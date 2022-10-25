@@ -3,7 +3,7 @@ import './Card.scss'
 
 
 
-const Card = ({ name, image, price, brand, skill }) => {
+const Card = ({ name, image, price, brand, skill}) => {
 
   return (
     <div className='product'>
