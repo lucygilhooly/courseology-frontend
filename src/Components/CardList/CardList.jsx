@@ -4,10 +4,11 @@ import Card from '../Card/Card'
 import skiPic from '../../assets/images/download.png'
 
 const CardList = ({products}) => {
-  const productsJSX = products.map((index) => {
+  console.log(products)
+  const productsJSX = products.map((product,index) => {
     return (
       <div key={index}>
-      <Card name={"Product Name"} image={skiPic} />
+      <Card name={product.name} image={product.image} price={product.price} brand={product.brand} skill={product.skillLevel} />
     </div>
   )
 })

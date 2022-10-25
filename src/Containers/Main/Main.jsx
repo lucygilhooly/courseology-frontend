@@ -19,7 +19,7 @@ const Main = ({searchTerm}) => {
     console.log(data)
   }
   const getTypes = async () => {
-    const response = await fetch("http://localhost:8080/products/type");
+    const response = await fetch("http://localhost:8080/products/types");
     const productData = await response.json();
     setTypes(productData);
   };
@@ -33,7 +33,7 @@ const Main = ({searchTerm}) => {
   const handleSelectType = event => setSelectedType(event.target.value);
 
   const filterProducts = (productsArr, searchTerm) => {
-    return productsArr.filter((products) => products.name.toLowerCase().includes(searchTerm.toLowerCase()))
+    return productsArr.filter((products) => products.name??products.name.toLowerCase().includes(searchTerm.toLowerCase()))
   }
  
     return (
